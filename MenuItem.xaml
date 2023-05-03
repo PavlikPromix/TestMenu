@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestMenu.MenuItem">
+    <Border
+        x:Name="frame"
+        HeightRequest="155"
+        WidthRequest="155"
+        BackgroundColor="#339CB9E3"
+        StrokeShape = "RoundRectangle 12,12,12,12"
+        Stroke="#009CB9E3">
+    </Border>
+</ContentView>
