@@ -11,10 +11,10 @@ public partial class MainPage : ContentPage
 
         MenuGrid grid = new MenuGrid();
 
-        grid.AddItem("sheets.png", "Справки");
-        grid.AddItem("slides.png", "Приказы");
-        grid.AddItem("forms.png", "Объявления");
-        grid.AddItem("docs.png", "Антиплагиат");
+        grid.AddItem("sheets.png", "Справки", new NewPage1());
+        grid.AddItem("slides.png", "Приказы", new NewPage1());
+        grid.AddItem("forms.png", "Объявления", new NewPage1());
+        grid.AddItem("docs.png", "Антиплагиат", new NewPage1());
 
         stack.Content = grid;
 	}
