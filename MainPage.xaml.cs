@@ -1,22 +1,19 @@
-﻿using Microsoft.Maui.Controls;
-
-namespace TestMenu;
+﻿namespace TestMenu;
 
 public partial class MainPage : ContentPage
 {
 
-	public MainPage()
-	{
-		InitializeComponent();
+    public MainPage()
+    {
+        InitializeComponent();
 
         MenuGrid grid = new MenuGrid();
 
-        grid.AddItem("sheets.png", "Справки", new NewPage1());
-        grid.AddItem("slides.png", "Приказы", new NewPage1());
-        grid.AddItem("forms.png", "Объявления", new NewPage1());
-        grid.AddItem("docs.png", "Антиплагиат", new NewPage1());
+        grid.DeleteItemAt(0);
+        grid.InsertItemAt(0, new MenuItem("sheets.png", "Справки", new NewPage1()));
+        grid.SetTileScale(200);
 
         stack.Content = grid;
-	}
+    }
 }
 

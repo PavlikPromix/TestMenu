@@ -1,41 +1,59 @@
+using Microsoft.Maui.Layouts;
+
 namespace TestMenu;
 
 public partial class MenuItem : ContentView
 {
-    public MenuItem()
+    private double currentSize;
+    public double CurrentSize
     {
-        InitializeComponent();
+        get { return currentSize; }
+        set 
+        {
+            if (value < 80) 
+                return;
+
+            currentSize = value; 
+            border.WidthRequest = value;
+            border.HeightRequest = value;
+
+            if (border.Content == null) 
+                return;
+
+            ((border.Content as FlexLayout).Children[0] as ImageButton).HeightRequest = value * 0.6;
+            ((border.Content as FlexLayout).Children[1] as Label).FontSize = 24 * (value / 155);
+        }
     }
+
+
     public MenuItem(string imagePath, string title, ContentPage page)
     {
         InitializeComponent();
         ImageButton imageButton = new ImageButton
         {
             Source = ImageSource.FromFile(imagePath),
-            HeightRequest = frame.HeightRequest * 0.6,
-            HorizontalOptions = LayoutOptions.Center,
-            VerticalOptions = LayoutOptions.Center,
-            Margin = new Thickness(0, 10, 0, 5),
+            HeightRequest = border.HeightRequest * 0.6,
         };
         imageButton.Clicked += async (sender, e) => { await Navigation.PushAsync(page); };
-        StackLayout layout = new StackLayout
+        FlexLayout layout = new FlexLayout
         {
+            Direction = FlexDirection.Column,
+            JustifyContent = FlexJustify.SpaceEvenly,
+            AlignItems = FlexAlignItems.Center,
+            BackgroundColor = Colors.Red,
             Children =
             {
                 imageButton,
                 new Label
                 {
                     TextColor = Color.FromRgb(56, 54, 150), // цвет текста из Figma прототипа
-                    HorizontalOptions = LayoutOptions.Center,
-                    VerticalOptions = LayoutOptions.Center,
                     Text = title,
                     FontSize = 24,
-                    LineHeight = 25,
                     FontFamily = "RobotoBold",
-                    Margin = new Thickness(0, 5)
                 }
             }
         };
-        frame.Content = layout;
+        border.Content = layout;
+        currentSize = 155;
     }
 }

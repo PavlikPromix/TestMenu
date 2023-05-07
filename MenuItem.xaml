@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TestMenu.MenuItem">
     <Border
-        x:Name="frame"
+        x:Name="border"
         HeightRequest="155"
         WidthRequest="155"
         BackgroundColor="#339CB9E3"
