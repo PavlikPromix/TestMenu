@@ -2,10 +2,10 @@ using Microsoft.Maui.Controls.Shapes;
 
 namespace TestMenu;
 
-public class NewPage1 : ContentPage
+public class NewPage5 : ContentPage
 {
-    public NewPage1()
-    {
+	public NewPage5()
+	{
         Button btn = new Button
         {
             Text = "Go back"
@@ -14,12 +14,19 @@ public class NewPage1 : ContentPage
         Content = new VerticalStackLayout
         {
             Children = {
+                new Rectangle
+                {
+                    Margin = new Thickness(30),
+                    HeightRequest = 300,
+                    WidthRequest = 300,
+                    Fill = Colors.Blue
+                },
                 new Ellipse
                 {
                     Margin = new Thickness(30),
                     HeightRequest = 300,
                     WidthRequest = 300,
-                    Fill = Colors.Green
+                    Fill = Colors.LimeGreen
                 },
                 btn
             }

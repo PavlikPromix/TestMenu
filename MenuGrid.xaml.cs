@@ -15,9 +15,9 @@ public partial class MenuGrid : ContentView
             MainGrid.AddColumnDefinition(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Auto) });
 
         AddItem(new MenuItem("sheets.png", "Справки", new NewPage1()));
-        AddItem(new MenuItem("slides.png", "Приказы", new NewPage1()));
-        AddItem(new MenuItem("forms.png", "Объявления", new NewPage1()));
-        AddItem(new MenuItem("docs.png", "Антиплагиат", new NewPage1()));
+        AddItem(new MenuItem("slides.png", "Приказы", new NewPage2()));
+        AddItem(new MenuItem("forms.png", "Объявления", new NewPage3()));
+        AddItem(new MenuItem("docs.png", "Антиплагиат", new NewPage4()));
     }
 
     public void AddItem(MenuItem menuItem) // Добавление тайла

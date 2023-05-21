@@ -40,7 +40,6 @@ public partial class MenuItem : ContentView
             Direction = FlexDirection.Column,
             JustifyContent = FlexJustify.SpaceEvenly,
             AlignItems = FlexAlignItems.Center,
-            BackgroundColor = Colors.Red,
             Children =
             {
                 imageButton,
